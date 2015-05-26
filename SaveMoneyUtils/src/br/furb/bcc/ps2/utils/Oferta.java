@@ -3,10 +3,7 @@ package br.furb.bcc.ps2.utils;
 public class Oferta {
 	private ECategoria categoria;
 	private String titulo;
-	private String descricao;
-	private String urlImagem;
 	private double preco;
-	private Estabelecimento estabelecimento;
 	private int likes;
 	private int deslikes;
 
@@ -26,22 +23,6 @@ public class Oferta {
 		this.titulo = titulo;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getUrlImagem() {
-		return urlImagem;
-	}
-
-	public void setUrlImagem(String urlImagem) {
-		this.urlImagem = urlImagem;
-	}
-
 	public double getPreco() {
 		return preco;
 	}
@@ -50,12 +31,20 @@ public class Oferta {
 		this.preco = preco;
 	}
 
-	public Estabelecimento getEstabelecimento() {
-		return estabelecimento;
+	public int getLikes() {
+		return likes;
 	}
 
-	public void setEstabelecimento(Estabelecimento estabelecimento) {
-		this.estabelecimento = estabelecimento;
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+
+	public int getDeslikes() {
+		return deslikes;
+	}
+
+	public void setDeslikes(int deslikes) {
+		this.deslikes = deslikes;
 	}
 
 }
