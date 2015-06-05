@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.furb.bcc.ps2.provider.ContentProviderFactory;
-import br.furb.bcc.ps2.utils.Oferta;
 import br.furb.bcc.ps2.utils.constants.Constant;
+import br.furb.bcc.ps2.utils.db.tabelas.Oferta;
 
 /**
  * Servlet implementation class BuscaOfertas

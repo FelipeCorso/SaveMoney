@@ -1,25 +1,25 @@
 package br.furb.bcc.ps2.provider;
 
+import java.util.ResourceBundle;
+
 import br.furb.bcc.ps2.provider.db.DBProvider;
+import br.furb.bcc.ps2.utils.constants.Constant;
 
 public final class ContentProviderFactory {
 
     private static final ContentProviderFactory CONTENTPROVIDERFACTORY = new ContentProviderFactory();
-
-    private ContentProviderFactory() {
-	// TODO Auto-generated constructor stub
-    }
+    private static final String PROVIDER_PROPERTIES = "br.furb.bcc.ps2.provider.provider";
 
     public static ContentProviderFactory getInstance() {
 	return CONTENTPROVIDERFACTORY;
     }
 
     public ContentProviderAbstract getContentProvider() {
-	// Lê de um arquivo.properties
-	String typeProvider = "DB";
+
+	String dataSource = ResourceBundle.getBundle(PROVIDER_PROPERTIES).getString(Constant.DATA_SOURCE);
 
 	ContentProviderAbstract contentProvider = null;
-	if (typeProvider.equals(ETypeContentProvider.DB.toString())) {
+	if (dataSource.equals(ETypeContentProvider.DB.toString())) {
 	    contentProvider = DBProvider.getInstance();
 	}
 

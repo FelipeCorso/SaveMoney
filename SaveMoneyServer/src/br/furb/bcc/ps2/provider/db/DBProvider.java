@@ -13,15 +13,15 @@ import java.util.ResourceBundle;
 
 import br.furb.bcc.ps2.provider.ContentProviderAbstract;
 import br.furb.bcc.ps2.provider.ETypeContentProvider;
-import br.furb.bcc.ps2.utils.ECategoria;
-import br.furb.bcc.ps2.utils.Endereco;
-import br.furb.bcc.ps2.utils.Estabelecimento;
-import br.furb.bcc.ps2.utils.Oferta;
-import br.furb.bcc.ps2.utils.OfertaDetalhada;
-import br.furb.bcc.ps2.utils.colunas.ColunasEndereco;
-import br.furb.bcc.ps2.utils.colunas.ColunasEstabelecimento;
-import br.furb.bcc.ps2.utils.colunas.ColunasOferta;
 import br.furb.bcc.ps2.utils.constants.Constant;
+import br.furb.bcc.ps2.utils.db.colunas.ColunasEndereco;
+import br.furb.bcc.ps2.utils.db.colunas.ColunasEstabelecimento;
+import br.furb.bcc.ps2.utils.db.colunas.ColunasOferta;
+import br.furb.bcc.ps2.utils.db.tabelas.Categoria;
+import br.furb.bcc.ps2.utils.db.tabelas.Endereco;
+import br.furb.bcc.ps2.utils.db.tabelas.Estabelecimento;
+import br.furb.bcc.ps2.utils.db.tabelas.Oferta;
+import br.furb.bcc.ps2.utils.db.tabelas.OfertaDetalhada;
 
 public class DBProvider extends ContentProviderAbstract {
 
@@ -87,7 +87,7 @@ public class DBProvider extends ContentProviderAbstract {
 		// criando o objeto Oferta
 		Oferta oferta = new Oferta();
 		oferta.setId(rs.getInt(ColunasOferta.ID_OFERTA));
-		oferta.setCategoria(ECategoria.valueOf(rs.getString(ColunasOferta.ID_CATEGORIA)));
+		oferta.setCategoria(Categoria.valueOf(rs.getString(ColunasOferta.ID_CATEGORIA)));
 		oferta.setTitulo(rs.getString(ColunasOferta.TITULO));
 		oferta.setValor(rs.getDouble(ColunasOferta.VALOR));
 		oferta.setLikes(rs.getInt(ColunasOferta.LIKES));
@@ -115,7 +115,7 @@ public class DBProvider extends ContentProviderAbstract {
 
 	    while (rs.next()) {
 		ofertaDetalhada.setId(rs.getInt(ColunasOferta.ID_OFERTA));
-		ofertaDetalhada.setCategoria(ECategoria.valueOf(rs.getString(ColunasOferta.ID_CATEGORIA)));
+		ofertaDetalhada.setCategoria(Categoria.valueOf(rs.getString(ColunasOferta.ID_CATEGORIA)));
 		ofertaDetalhada.setTitulo(rs.getString(ColunasOferta.TITULO));
 		ofertaDetalhada.setValor(rs.getDouble(ColunasOferta.VALOR));
 		ofertaDetalhada.setLikes(rs.getInt(ColunasOferta.LIKES));
@@ -153,6 +153,12 @@ public class DBProvider extends ContentProviderAbstract {
 
     public Map<String, String> getQueris() {
 	return queris;
+    }
+
+    @Override
+    public void inserirOferta(OfertaDetalhada ofertaDetalhada) {
+	// TODO Auto-generated method stub
+
     }
 
 }
