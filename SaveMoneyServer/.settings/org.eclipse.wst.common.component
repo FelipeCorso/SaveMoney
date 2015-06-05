@@ -2,6 +2,9 @@
     <wb-module deploy-name="SaveMoneyServer">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="SaveMoneyUtils.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SaveMoneyUtils/SaveMoneyUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="SaveMoneyServer"/>
         <property name="java-output-path" value="/SaveMoneyServer/build/classes"/>
     </wb-module>
