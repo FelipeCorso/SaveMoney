@@ -1,4 +1,4 @@
-<%@page import="br.furb.bcc.ps2.utils.Oferta"%>
+<%@page import="br.furb.bcc.ps2.utils.db.tabelas.Oferta"%>
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -17,7 +17,7 @@
 		     %>
 		       <tr>
 		         <td><%=oferta.getTitulo() %></td> 
-		         <td><%=oferta.getPreco() %></td>
+		         <td><%=oferta.getValor() %></td>
 		       </tr>
 		     <%
 	 		     }
