@@ -82,11 +82,11 @@ public class SaveMoneyServlet extends HttpServlet {
 	listOfertas = new ArrayList<Oferta>();
 	Oferta oferta1 = new Oferta();
 	oferta1.setTitulo("Oferta1");
-	oferta1.setPreco(100);
+	oferta1.setValor(100);
 
 	Oferta oferta2 = new Oferta();
 	oferta2.setTitulo("Oferta2");
-	oferta2.setPreco(150);
+	oferta2.setValor(150);
 
 	listOfertas.add(oferta1);
 	listOfertas.add(oferta2);
