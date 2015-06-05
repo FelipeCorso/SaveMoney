@@ -15,11 +15,11 @@ public abstract class ContentProviderAbstract {
 
     public abstract List<Oferta> buscaInicial();
 
-    public abstract List<Oferta> buscaInicial(int idUltOferta);
+    public abstract List<Oferta> busca(int idUltOferta);
 
-    public abstract List<Oferta> buscaInicial(String filtro, int idUltOferta);
+    public abstract List<Oferta> buscaFiltro(String filtro, int idUltOferta);
 
-    public abstract OfertaDetalhada buscaDetalhesOferta(String filtro, int idUltOferta);
+    public abstract OfertaDetalhada buscaDetalhesOferta(int idOferta);
 
     public ETypeContentProvider getTypeContentProvider() {
 	return typeContentProvider;
