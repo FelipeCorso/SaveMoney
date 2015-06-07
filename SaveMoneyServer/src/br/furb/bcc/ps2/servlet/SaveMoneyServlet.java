@@ -1,17 +1,16 @@
 package br.furb.bcc.ps2.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.furb.bcc.ps2.provider.ContentProviderFactory;
 import br.furb.bcc.ps2.utils.constants.Constant;
 import br.furb.bcc.ps2.utils.db.tabelas.Oferta;
 
@@ -69,7 +68,7 @@ public class SaveMoneyServlet extends HttpServlet {
 
 	String idUltOferta = request.getParameter(Constant.ID_ULTIMA_OFERTA);
 	if (idUltOferta == null) {
-	    listOfertas = ContentProviderFactory.getInstance().getContentProvider().buscaInicial();
+	    // listOfertas = ContentProviderFactory.getInstance().getContentProvider().buscaInicial();
 	} else {
 	    // String idUltOferta = request.getParameter(Constant.ID_ULTIMA_OFERTA);
 	    // if() {
@@ -93,11 +92,17 @@ public class SaveMoneyServlet extends HttpServlet {
 
 	request.setAttribute(Constant.LISTA_OFERTAS, listOfertas);
 
+	/*
+	 * Aqui deve ser montado algo como um JSON para retornar para o app
+	 */
+	response.setContentType("text/html");
+	response.getWriter().write("oioioi");
+
 	/* EXIBIR OFERTAS */
-	RequestDispatcher dispatcher = request.getRequestDispatcher("/exibirOfertas.jsp");
-	if (dispatcher != null) {
-	    dispatcher.forward(request, response);
-	}
+	// RequestDispatcher dispatcher = request.getRequestDispatcher("/exibirOfertas.jsp");
+	// if (dispatcher != null) {
+	// dispatcher.forward(request, response);
+	// }
 
     }
 }
