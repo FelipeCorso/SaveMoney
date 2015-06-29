@@ -1,14 +1,27 @@
 package br.furb.bcc.ps2.utils.db.tabelas;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 public class OfertaDetalhada extends Oferta {
 
+    private Categoria categoria;
     private String detalhes;
-    private String urlImagem;
-    private String dataCadastro;
-    private Estabelecimento estabelecimento;
+    private ImageIO imagem;
+    private Date dataCadastro;
+    private Date dataValidade;
+    private String estabelecimento;
     private List<Comentario> listaComentario;
+
+    public Categoria getCategoria() {
+	return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+	this.categoria = categoria;
+    }
 
     public String getDetalhes() {
 	return detalhes;
@@ -18,27 +31,27 @@ public class OfertaDetalhada extends Oferta {
 	this.detalhes = detalhes;
     }
 
-    public String getUrlImagem() {
-	return urlImagem;
+    public ImageIO getImagem() {
+	return imagem;
     }
 
-    public void setUrlImagem(String urlImagem) {
-	this.urlImagem = urlImagem;
+    public void setImagem(ImageIO imagem) {
+	this.imagem = imagem;
     }
 
-    public String getDataCadastro() {
+    public Date getDataCadastro() {
 	return dataCadastro;
     }
 
-    public void setDataCadastro(String dataCadastro) {
+    public void setDataCadastro(Date dataCadastro) {
 	this.dataCadastro = dataCadastro;
     }
 
-    public Estabelecimento getEstabelecimento() {
+    public String getEstabelecimento() {
 	return estabelecimento;
     }
 
-    public void setEstabelecimento(Estabelecimento estabelecimento) {
+    public void setEstabelecimento(String estabelecimento) {
 	this.estabelecimento = estabelecimento;
     }
 
@@ -48,6 +61,18 @@ public class OfertaDetalhada extends Oferta {
 
     public void setListaComentario(List<Comentario> listaComentario) {
 	this.listaComentario = listaComentario;
+    }
+
+    public void addComentario(Comentario comentario) {
+	listaComentario.add(comentario);
+    }
+
+    public Date getDataValidade() {
+	return dataValidade;
+    }
+
+    public void setDataValidade(Date dataValidade) {
+	this.dataValidade = dataValidade;
     }
 
 }

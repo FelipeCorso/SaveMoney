@@ -4,7 +4,7 @@ public class Comentario {
 
     private int id;
     private String data;
-    private Usuario usuario;
+    private String usuario;
 
     public int getId() {
 	return id;
@@ -22,11 +22,11 @@ public class Comentario {
 	this.data = data;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
 	return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
 	this.usuario = usuario;
     }
 

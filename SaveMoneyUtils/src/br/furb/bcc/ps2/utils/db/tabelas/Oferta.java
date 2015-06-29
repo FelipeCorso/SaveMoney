@@ -1,17 +1,21 @@
 package br.furb.bcc.ps2.utils.db.tabelas;
 
-
 public class Oferta {
 
     private int id;
-    private Categoria categoria;
     private String titulo;
     private double valor;
     private int likes;
     private int dislikes;
 
-    public Categoria getCategoria() {
-	return categoria;
+    public Oferta() {
+    }
+
+    public Oferta(int id, String titulo, double valor) {
+	super();
+	this.id = id;
+	this.titulo = titulo;
+	this.valor = valor;
     }
 
     public int getId() {
@@ -20,10 +24,6 @@ public class Oferta {
 
     public void setId(int id) {
 	this.id = id;
-    }
-
-    public void setCategoria(Categoria categoria) {
-	this.categoria = categoria;
     }
 
     public String getTitulo() {
@@ -56,6 +56,11 @@ public class Oferta {
 
     public void setDislikes(int dislikes) {
 	this.dislikes = dislikes;
+    }
+
+    @Override
+    public String toString() {
+	return titulo + "\nPreço: R$ " + valor + "\nCurtidas: " + likes + "     Descurtidas: " + dislikes;
     }
 
 }
